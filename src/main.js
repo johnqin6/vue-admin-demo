@@ -8,6 +8,7 @@ import 'element-ui/lib/theme-chalk/index.css'
 import elementUI from 'element-ui'
 import './assets/styles/index.less'
 import './assets/iconfont/icon.css'
+// import './assets/svgs'
 
 // 引入自动注册全局组件文件
 import './components'

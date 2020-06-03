@@ -1,28 +1,86 @@
 <template>
-  <div class="layout">
+  <div class="layout" :class="classObj">
     <sidebar class="sidebar-container"></sidebar>
     <div class="app-container">
+      <nav-bar></nav-bar>
       <app-main></app-main>
     </div>
   </div>
 </template>
 <script>
-import { appMain, sidebar } from './components'
+import { appMain, sidebar, navBar } from './components'
 export default {
   name: 'layout',
   components: {
     appMain,
-    sidebar
+    sidebar,
+    navBar
+  },
+  computed: {
+    sidebar () {
+      return this.$store.state.app.sidebar
+    },
+    classObj () {
+      return {
+        hideSidebar: !this.sidebar.opened
+      }
+    }
   }
 }
 </script>
-<style lang="less" scoped>
+<style lang="less">
 .layout {
   display: flex;
   .sidebar-container {
     width: 200px;
     height: 100%;
-    background-color: #ccc;
+    background-color: #3a3f51;
+    transition: width 0.28s;
+    overflow: hidden;
+    .horizontal-collapse-transition {
+      transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+    }
+    .el-menu {
+      border: none;
+      height: 100%;
+      width: 100% !important;
+    }
+  }
+  .app-container {
+    width: 100%;
+    min-height: 100%;
+    margin-left: 10px;
+    transition: margin-left .28s;
+  }
+  &.hideSidebar {
+    .sidebar-container {
+      width: 36px !important;
+    }
+    .el-tooltip {
+      padding: 0 5px !important;
+    }
+    .el-submenu {
+      overflow: hidden;
+      &>.el-submenu__title {
+        padding-left: 5px !important;
+        .el-submenu__icon-arrow {
+          display: none;
+        }
+      }
+    }
+    .el-menu--collapse {
+      .el-submenu {
+        &>.el-submenu__title {
+          &>span {
+            height: 0;
+            width: 0;
+            overflow: hidden;
+            visibility: hidden;
+            display: inline-block;
+          }
+        }
+      }
+    }
   }
 }
 </style>
