@@ -1,6 +1,7 @@
 #app {
   .layout {
     display: flex;
+    height: 100%;
     .sidebar-container {
       width: 200px;
       height: 100%;
@@ -9,6 +10,12 @@
       overflow: hidden;
       .horizontal-collapse-transition {
         transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
+      }
+      .scrollbar-wrapper {
+        height: calc(100% + 15px);
+        .el-scrollbar__view {
+          height: 100%;
+        }
       }
       .el-menu {
         border: none;
@@ -19,7 +26,7 @@
     .app-container {
       width: 100%;
       min-height: 100%;
-      margin-left: 10px;
+      background-color: #f0f0f0;
       transition: margin-left .28s;
     }
     &.hideSidebar {

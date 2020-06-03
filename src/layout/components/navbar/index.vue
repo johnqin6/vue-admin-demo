@@ -1,7 +1,10 @@
 <!--头部导航 -->
 <template>
-  <el-menu>
-    <open-side-btn></open-side-btn>
+  <el-menu class="nav-bar">
+    <div class="nav-left">
+      <open-side-btn></open-side-btn>
+    </div>
+    <div class="nav-right"></div>
   </el-menu>
 </template>
 <script>
@@ -12,3 +15,17 @@ export default {
   }
 }
 </script>
+<style lang="less" scoped>
+.nav-bar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  height: 50px;
+  padding: 0 10px;
+  box-shadow: 0 2px 2px rgba(0, 0, 0, .05);
+  transition: all .3s;
+  .nav-left {
+    flex: 1;
+  }
+}
+</style>

@@ -15,5 +15,8 @@ export default {
   }
 }
 </script>
-<style scoped>
+<style lang="less" scoped>
+.app-main {
+  padding: 20px;
+}
 </style>

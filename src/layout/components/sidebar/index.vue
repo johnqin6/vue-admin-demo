@@ -1,53 +1,57 @@
 <!-- 侧边栏导航 -->
 <template>
-  <div>
+  <!--
+    el-scrollbar 自定义滚动组件 是element隐藏的组件，文档没有，但可以直接使用
+    可传递的相关属性：
+    - native: Boolean, true: 不显示el的bar, false: 显示el模拟的滚动条
+    - wrapStyle: {}, 外层盒子的样式
+    - wrapClass: {}, 外层盒子的class
+    - viewClass: {}, 内层盒子的class
+    - viewStyle: {}, 内层盒子的样式
+    - noresize: Boolean, 如果 container尺寸不会发生变化，最好设置他来优化性能
+    - tag: String, 所用标签，默认是div
+  -->
+  <el-scrollbar wrapClass="scrollbar-wrapper">
     <el-menu
       mode="vertical"
-      default-active="1-4-1"
+      default-active="$route.path"
       :show-timeout="200"
       background-color="#3a3f51"
       text-color="#fff"
       active-text-color="#42b983"
       :collapse="!sidebar.opened">
-      <el-submenu index="1">
-        <template slot="title">
-          <i class="el-icon-location"></i>
-          <span slot="title">导航一</span>
-        </template>
-        <el-menu-item-group>
-          <span slot="title">分组一</span>
-          <el-menu-item index="1-1">选项1</el-menu-item>
-          <el-menu-item index="1-2">选项2</el-menu-item>
-        </el-menu-item-group>
-        <el-menu-item-group title="分组2">
-          <el-menu-item index="1-3">选项3</el-menu-item>
-        </el-menu-item-group>
-        <el-submenu index="1-4">
-          <span slot="title">选项4</span>
-          <el-menu-item index="1-4-1">选项1</el-menu-item>
-        </el-submenu>
-      </el-submenu>
-      <el-menu-item index="2">
-        <i class="el-icon-menu"></i>
-        <span slot="title">导航二</span>
-      </el-menu-item>
-      <el-menu-item index="3" disabled>
-        <i class="el-icon-document"></i>
-        <span slot="title">导航三</span>
-      </el-menu-item>
-      <el-menu-item index="4">
-        <i class="el-icon-setting"></i>
-        <span slot="title">导航四</span>
-      </el-menu-item>
+      <sidebar-item
+        :routes="routes"
+      ></sidebar-item>
     </el-menu>
-  </div>
+  </el-scrollbar>
 </template>
 
 <script>
 import { mapGetters } from 'vuex'
+import SidebarItem from './SidebarItem'
 export default {
+  components: {
+    SidebarItem
+  },
   data () {
     return {
+      routes: [
+        {
+          path: '',
+          children: [
+            {
+              path: 'home',
+              name: 'home',
+              icon: 'icon-shouye',
+              prefix: 'iconfont',
+              meta: {
+                title: '首页'
+              }
+            }
+          ]
+        }
+      ]
     }
   },
   computed: {
