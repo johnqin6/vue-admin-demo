@@ -12,6 +12,7 @@
     - tag: String, 所用标签，默认是div
   -->
   <el-scrollbar wrapClass="scrollbar-wrapper">
+    <logo :isCollapse="isCollapse"></logo>
     <el-menu
       mode="vertical"
       default-active="$route.path"
@@ -19,7 +20,7 @@
       background-color="#3a3f51"
       text-color="#fff"
       active-text-color="#42b983"
-      :collapse="!sidebar.opened">
+      :collapse="isCollapse">
       <sidebar-item
         :routes="routes"
       ></sidebar-item>
@@ -30,9 +31,11 @@
 <script>
 import { mapGetters } from 'vuex'
 import SidebarItem from './SidebarItem'
+import Logo from './logo'
 export default {
   components: {
-    SidebarItem
+    SidebarItem,
+    Logo
   },
   data () {
     return {
@@ -55,7 +58,10 @@ export default {
     }
   },
   computed: {
-    ...mapGetters(['sidebar'])
+    ...mapGetters(['sidebar']),
+    isCollapse () {
+      return !this.sidebar.opened
+    }
   },
   methods: {
   }

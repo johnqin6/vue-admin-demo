@@ -1,7 +1,7 @@
 export default {
   title: 'vue-admin',
-  logon: 'V',
-  author: 'johnqin',
+  logo: 'V',
+  author: 'john',
   whiteList: ['/login', '/404', '/401', '/lock'],
   lockPage: '/lock'
 }

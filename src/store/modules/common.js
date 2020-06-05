@@ -2,7 +2,7 @@ import website from '@/const/website'
 
 const common = {
   state: {
-    website
+    website: website
   },
   mutations: {},
   actions: {}
