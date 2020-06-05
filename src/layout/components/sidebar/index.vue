@@ -22,7 +22,7 @@
       active-text-color="#42b983"
       :collapse="isCollapse">
       <sidebar-item
-        :routes="routes"
+        :routes="permission_routers"
       ></sidebar-item>
     </el-menu>
   </el-scrollbar>
@@ -39,29 +39,16 @@ export default {
   },
   data () {
     return {
-      routes: [
-        {
-          path: '',
-          children: [
-            {
-              path: 'home',
-              name: 'home',
-              icon: 'icon-shouye',
-              prefix: 'iconfont',
-              meta: {
-                title: '首页'
-              }
-            }
-          ]
-        }
-      ]
     }
   },
   computed: {
-    ...mapGetters(['sidebar']),
+    ...mapGetters(['sidebar', 'permission_routers']),
     isCollapse () {
       return !this.sidebar.opened
     }
+  },
+  mounted () {
+    console.log(this.$route.path)
   },
   methods: {
   }

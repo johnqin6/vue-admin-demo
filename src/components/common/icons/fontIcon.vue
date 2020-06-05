@@ -19,7 +19,9 @@ export default {
     },
     name: String,
     size: [Number, String],
-    color: String,
+    color: {
+      type: String
+    },
     disabled: {
       type: Boolean,
       default: false

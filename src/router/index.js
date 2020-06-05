@@ -4,27 +4,38 @@ import Layout from '../layout'
 
 Vue.use(VueRouter)
 
-const routes = [
+export const routes = [
   {
     path: '/login',
     name: 'login',
     component: () => import('@/views/login/Index'),
     meta: {
       title: '登录'
-    }
+    },
+    hidden: true
   },
   {
-    path: '/',
-    name: 'Home',
+    path: '',
     component: Layout,
-    redirect: '/home',
+    redirect: '/dashboard/dashboard'
+  },
+  {
+    path: '/dashboard',
+    component: Layout,
+    icon: 'icon-shouye',
+    prefix: 'iconfont',
+    meta: {
+      title: 'dashboard'
+    },
     children: [
       {
-        path: 'home',
-        name: 'home',
-        component: () => import('@/views/Home'),
+        path: 'dashboard',
+        name: 'dashboard',
+        component: () => import('@/views/dashboard/Dashboard'),
+        icon: 'icon-shouye',
+        prefix: 'iconfont',
         meta: {
-          title: '首页'
+          title: 'dashboard'
         }
       }
     ]
@@ -36,3 +47,5 @@ const router = new VueRouter({
 })
 
 export default router
+
+export const asyncRouterMap = []
