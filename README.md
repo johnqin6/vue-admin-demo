@@ -1,24 +1,15 @@
-# vue-admin-demo
+# vue-admin-admin
 
-## Project setup
-```
-yarn install
-```
+## 简介
 
-### Compiles and hot-reloads for development
-```
-yarn serve
-```
+vue后台管理项目模板
 
-### Compiles and minifies for production
-```
-yarn build
-```
-
-### Lints and fixes files
-```
-yarn lint
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+## 项目运行
+- 安装依赖
+> npm i | cnpm i | yarn      
+- 本地运行   
+> npm serve | yarn serve    
+- 生产打包   
+> npm run build | yarn run build   
+- eslint 检查并修复
+> npm run lint     
