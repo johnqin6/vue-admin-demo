@@ -84,6 +84,7 @@ export default {
     height: 100%;
     background: url('../../assets/images/lockLogin.png');
     background-size: cover;
+    z-index: -1;
   }
   .lock-form {
     width: 300px;
