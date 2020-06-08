@@ -3,12 +3,14 @@
   <el-menu class="nav-bar">
     <div class="nav-left">
       <open-side-btn></open-side-btn>
+      <q-breadcrumb></q-breadcrumb>
     </div>
     <div class="nav-right"></div>
   </el-menu>
 </template>
 <script>
 import openSideBtn from './openSideBtn'
+
 export default {
   components: {
     openSideBtn
@@ -26,6 +28,8 @@ export default {
   transition: all .3s;
   .nav-left {
     flex: 1;
+    display: flex;
+    align-items: center;
   }
 }
 </style>
