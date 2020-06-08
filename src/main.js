@@ -9,6 +9,9 @@ import elementUI from 'element-ui'
 import './assets/styles/index.less'
 import './assets/iconfont/icon.css'
 // import './assets/svgs'
+import './mock'
+// 路由守护
+import './permission'
 
 // 多语言
 import i18n from './lang'
@@ -24,17 +27,6 @@ Vue.prototype.$http = http
 Vue.use(elementUI, {
   size: 'medium', // 设置 element-ui 默认size
   i18n: (key, value) => i18n.t(key, value)
-})
-
-// 路由守卫
-router.beforeEach((to, from, next) => {
-  // generateTitle(to.meta.title)
-  const userInfo = localStorage.getItem('userInfo') || null
-  if (!userInfo && to.meta.auth) {
-    next()
-  } else {
-    next()
-  }
 })
 
 Vue.config.productionTip = false

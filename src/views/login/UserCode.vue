@@ -21,7 +21,7 @@
       </el-input>
     </el-form-item>
     <el-form-item>
-      <el-button class="login-btn" type="primary" round>登录</el-button>
+      <el-button class="login-btn" type="primary" round @click="handleLogin">登录</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -78,6 +78,15 @@ export default {
           clearInterval(time)
         }
       }, 1000)
+    },
+    handleLogin () {
+      this.$refs.form.validate(valid => {
+        if (valid) {
+          this.$store.dispatch('Login', this.form).then(res => {
+            this.$router.push({ path: '/' })
+          })
+        }
+      })
     }
   }
 }

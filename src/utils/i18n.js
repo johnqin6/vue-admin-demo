@@ -4,7 +4,7 @@
  * @retrun title
  */
 export function generateTitle (title) {
-  console.log(this)
+  // console.log(this)
   // $t :this method from vue-i18n, inject in @/lang/index.js
   const hasKey = this.$te('route.' + title)
   const translatedTitle = this.$t('route.' + title)

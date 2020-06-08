@@ -22,7 +22,7 @@ export const routes = [
     component: () => import('@/views/commons/Lock')
   },
   {
-    path: '',
+    path: '/',
     component: Layout,
     redirect: '/dashboard/dashboard'
   },

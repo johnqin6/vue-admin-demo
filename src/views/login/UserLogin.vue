@@ -21,7 +21,7 @@
     </el-form-item>
     <el-checkbox v-model="checked">记住账户</el-checkbox>
     <el-form-item>
-      <el-button class="login-btn" type="primary" round>登录</el-button>
+      <el-button class="login-btn" type="primary" round @click="handleLogin">登录</el-button>
     </el-form-item>
   </el-form>
 </template>
@@ -50,6 +50,15 @@ export default {
   methods: {
     showPwd () {
       this.passwordType === 'password' ? (this.passwordType = 'text') : (this.passwordType = 'password')
+    },
+    handleLogin () {
+      this.$refs.form.validate(valid => {
+        if (valid) {
+          this.$store.dispatch('Login', this.form).then(res => {
+            this.$router.push({ path: '/dashboard/dashboard' })
+          })
+        }
+      })
     }
   }
 }

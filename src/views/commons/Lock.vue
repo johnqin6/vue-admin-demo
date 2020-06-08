@@ -7,10 +7,10 @@
           v-model="password"
           @keyup.enter.native="handleLogin"
           placeholder="请输入登录密码" type="password">
-          <el-button slot="append" @click="handleLogin" style="padding-right: 36px;">
+          <el-button slot="append" @click="handleLogin" >
             <i class="iconfont icon-kaisuo"></i>
           </el-button>
-          <el-button slot="append">
+          <el-button slot="append" @click="handleLogout">
             <i class="iconfont icon-dengchu"></i>
           </el-button>
         </el-input>

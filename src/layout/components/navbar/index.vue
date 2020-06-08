@@ -28,7 +28,7 @@
             </el-dropdown-item>
           </a>
           <el-dropdown-item divided>
-            <div>退出</div>
+            <div @click="logout">退出</div>
           </el-dropdown-item>
         </el-dropdown-menu>
       </el-dropdown>
@@ -41,6 +41,13 @@ import openSideBtn from './openSideBtn'
 export default {
   components: {
     openSideBtn
+  },
+  methods: {
+    logout () {
+      this.$store.dispatch('LogOut').then(() => {
+        location.reload()
+      })
+    }
   }
 }
 </script>
