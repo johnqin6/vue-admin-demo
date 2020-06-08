@@ -14,6 +14,13 @@ export const routes = [
     },
     hidden: true
   },
+  // 锁屏
+  {
+    path: '/lock',
+    hidden: true,
+    name: '锁屏页',
+    component: () => import('@/views/commons/Lock')
+  },
   {
     path: '',
     component: Layout,
