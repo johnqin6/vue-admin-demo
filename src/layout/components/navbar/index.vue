@@ -10,10 +10,15 @@
     <div class="nav-right">
       <!-- 锁屏 -->
       <q-top-lock class="top-lock"></q-top-lock>
+      <div class="ml_15">
+        <q-github></q-github>
+      </div>
       <!-- 全屏 -->
-      <el-tooltip class="full-screen ml_20" effect="dark" content="全屏" placement="bottom">
+      <el-tooltip class="full-screen ml_15" effect="dark" content="全屏" placement="bottom">
         <q-full-screen></q-full-screen>
       </el-tooltip>
+      <!-- 语言切换 -->
+      <q-lang-select class="ml_15"></q-lang-select>
       <!-- 账户 -->
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
@@ -59,8 +64,8 @@ export default {
 .full-screen {
   height: 20px;
 }
-.ml_20 {
-  margin-left: 20px;
+.ml_15 {
+  margin-left: 15px;
 }
 .nav-bar {
   display: flex;

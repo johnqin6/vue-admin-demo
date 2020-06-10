@@ -1,4 +1,6 @@
 export default {
+  language: state => state.app.language,
+  device: state => state.app.device,
   name: state => state.user.name,
   token: state => state.user.token,
   avatar: state => state.user.token,
