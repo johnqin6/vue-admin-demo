@@ -6,6 +6,7 @@ import 'nprogress/nprogress.css'
 import { Message } from 'element-ui'
 import { getToken } from '@/utils/auth' // 得到token
 import { setTitle } from '@/utils/util' // 设置浏览器头部标题
+// import { generateTitle } from '@/utils/i18n'
 
 /**
  * 验证权限是否许可进入

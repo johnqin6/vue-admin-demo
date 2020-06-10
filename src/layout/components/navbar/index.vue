@@ -19,6 +19,10 @@
       </el-tooltip>
       <!-- 语言切换 -->
       <q-lang-select class="ml_15"></q-lang-select>
+      <!-- 主题 -->
+      <el-tooltip class="ml_15" effect="dark" content="主题" placement="bottom">
+        <q-skin></q-skin>
+      </el-tooltip>
       <!-- 账户 -->
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
