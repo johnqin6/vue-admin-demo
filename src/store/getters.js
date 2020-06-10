@@ -9,5 +9,6 @@ export default {
   addRouters: state => state.permission.addRouters,
   website: state => state.common.website,
   isLock: state => state.user.isLock,
-  lockPassword: state => state.user.lockPassword
+  lockPassword: state => state.user.lockPassword,
+  isFullScreen: state => state.fullScreen.isFullScreen
 }

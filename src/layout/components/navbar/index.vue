@@ -10,6 +10,10 @@
     <div class="nav-right">
       <!-- 锁屏 -->
       <q-top-lock class="top-lock"></q-top-lock>
+      <!-- 全屏 -->
+      <el-tooltip class="full-screen ml_20" effect="dark" content="全屏" placement="bottom">
+        <q-full-screen></q-full-screen>
+      </el-tooltip>
       <!-- 账户 -->
       <el-dropdown class="avatar-container right-menu-item" trigger="click">
         <div class="avatar-wrapper">
@@ -52,6 +56,12 @@ export default {
 }
 </script>
 <style lang="less" scoped>
+.full-screen {
+  height: 20px;
+}
+.ml_20 {
+  margin-left: 20px;
+}
 .nav-bar {
   display: flex;
   justify-content: space-between;

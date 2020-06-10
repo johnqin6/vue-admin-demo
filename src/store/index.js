@@ -4,6 +4,7 @@ import permission from './modules/permission' // 菜单路由相关
 import app from './modules/app'
 import common from './modules/common'
 import user from './modules/user'
+import fullScreen from './modules/fullScreen'
 import getters from './getters'
 
 Vue.use(Vuex)
@@ -13,7 +14,8 @@ export default new Vuex.Store({
     permission,
     common,
     app,
-    user
+    user,
+    fullScreen
   },
   getters
 })
