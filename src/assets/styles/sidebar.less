@@ -1,13 +1,19 @@
 #app {
   .layout {
-    display: flex;
+    // display: flex;
     height: 100%;
     .sidebar-container {
+      position: fixed;
+      top: 0;
+      left: 0;
+      bottom: 0;
       width: 210px;
       height: 100%;
       background-color: #3a3f51;
       transition: width 0.28s;
       overflow: hidden;
+      font-size: 0px;
+      z-index: 1001;
       .horizontal-collapse-transition {
         transition: 0s width ease-in-out, 0s padding-left ease-in-out, 0s padding-right ease-in-out;
       }
@@ -24,14 +30,18 @@
       }
     }
     .app-container {
-      width: 100%;
+      // width: 100%;
       min-height: 100%;
       background-color: #f0f0f0;
       transition: margin-left .28s;
+      margin-left: 210px;
     }
     &.hideSidebar {
       .sidebar-container {
         width: 36px !important;
+      }
+      .app-container {
+        margin-left: 36px !important;
       }
       .el-tooltip {
         padding: 0 5px !important;
@@ -58,6 +68,31 @@
           }
         }
       }
+    }
+  }
+  // 适配移动端
+  .mobile {
+    .app-container {
+      margin-left: 0px !important;
+    }
+    .slidebar-container {
+      transition: transform .28s;
+      width: 180px !important;
+    }
+    &.hideSidebar {
+      .sidebar-container {
+        transition-duration: 0.3s;
+        transform: translate3d(-180px, 0, 0);
+      }
+      .app-container {
+        margin-left: 0px !important;
+      }
+    }
+  }
+  .withoutAnimation {
+    .main-container,
+    .sidebar-container {
+      transition: none;
     }
   }
 }

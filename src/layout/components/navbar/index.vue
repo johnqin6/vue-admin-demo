@@ -1,6 +1,6 @@
 <!--头部导航 -->
 <template>
-  <el-menu class="nav-bar">
+  <el-menu class="nav-bar" :class="device === 'mobile' ? 'column' : ''">
     <div class="nav-left">
       <!-- 侧边框展开关闭按钮 -->
       <open-side-btn></open-side-btn>
@@ -55,6 +55,11 @@ export default {
   components: {
     openSideBtn
   },
+  computed: {
+    device () {
+      return this.$store.state.app.device
+    }
+  },
   methods: {
     logout () {
       this.$store.dispatch('LogOut').then(() => {
@@ -79,14 +84,20 @@ export default {
   padding: 0 10px;
   box-shadow: 0 2px 2px rgba(0, 0, 0, .05);
   transition: all .3s;
+  &.column {
+    flex-direction: column;
+    height: 100px;
+  }
   .nav-left {
     flex: 1;
     display: flex;
     align-items: center;
+    align-self: flex-start;
   }
   .nav-right {
     display: flex;
     align-items: center;
+    align-self: flex-end;
     &:focus {
       outline: none;
     }
