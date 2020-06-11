@@ -13,5 +13,7 @@ export default {
   isLock: state => state.user.isLock,
   lockPassword: state => state.user.lockPassword,
   isFullScreen: state => state.fullScreen.isFullScreen,
-  errorLogs: state => state.errorLog.logs
+  errorLogs: state => state.errorLog.logs,
+  visitedViews: state => state.tagsView.visitedViews,
+  cachedViews: state => state.tagsView.cachedViews
 }

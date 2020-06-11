@@ -13,5 +13,15 @@ export default {
   },
   route: {
     dashboard: 'dashboard'
+  },
+  tagsView: {
+    close: 'Close',
+    closeOthers: 'Close Others',
+    closeAll: 'Close All'
+  },
+  errorLog: {
+    tips: 'tips',
+    description: 'description',
+    documentation: 'documentation'
   }
 }
