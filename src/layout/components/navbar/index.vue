@@ -8,8 +8,10 @@
       <q-breadcrumb></q-breadcrumb>
     </div>
     <div class="nav-right">
+      <!-- 错误日志 -->
+      <q-error-log></q-error-log>
       <!-- 锁屏 -->
-      <q-top-lock class="top-lock"></q-top-lock>
+      <q-top-lock class="top-lock ml_15"></q-top-lock>
       <div class="ml_15">
         <q-github></q-github>
       </div>

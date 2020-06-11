@@ -13,6 +13,7 @@ import './assets/iconfont/icon.css'
 import './mock'
 // 路由守护
 import './permission'
+import './errorLog' // 错误日志
 
 // 多语言
 import i18n from './lang'

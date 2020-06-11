@@ -5,6 +5,7 @@ import app from './modules/app'
 import common from './modules/common'
 import user from './modules/user'
 import fullScreen from './modules/fullScreen'
+import errorLog from './modules/errorLog'
 import getters from './getters'
 
 Vue.use(Vuex)
@@ -15,7 +16,8 @@ export default new Vuex.Store({
     common,
     app,
     user,
-    fullScreen
+    fullScreen,
+    errorLog
   },
   getters
 })

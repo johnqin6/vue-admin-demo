@@ -12,5 +12,6 @@ export default {
   website: state => state.common.website,
   isLock: state => state.user.isLock,
   lockPassword: state => state.user.lockPassword,
-  isFullScreen: state => state.fullScreen.isFullScreen
+  isFullScreen: state => state.fullScreen.isFullScreen,
+  errorLogs: state => state.errorLog.logs
 }
