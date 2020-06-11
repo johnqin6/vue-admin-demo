@@ -9,7 +9,6 @@ import elementUI from 'element-ui'
 import locale from 'element-ui/lib/locale/lang/en'
 import './assets/styles/index.less'
 import './assets/iconfont/icon.css'
-// import './assets/svgs'
 import './mock'
 // 路由守护
 import './permission'
@@ -23,6 +22,7 @@ import { global } from '@/global/global'
 
 // 引入自动注册全局组件文件
 import './components'
+import './assets/icons'
 import http from './utils/request'
 // 挂载请求方法
 Vue.prototype.$http = http

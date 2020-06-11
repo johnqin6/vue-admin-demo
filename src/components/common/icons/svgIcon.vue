@@ -6,6 +6,7 @@
       xmlns="http://www.w3.org/2000/svg"
       viewBox="0 0 512 512"
       aria-hidden="true"
+      class="svg-icon"
     >
       <use :xlink:href="'#' + name" :fill="color" />
     </svg>
@@ -33,3 +34,15 @@ export default {
   }
 }
 </script>
+<style scoped>
+.q-icon {
+  display: inline-block;
+}
+.svg-icon {
+  width: 1em;
+  height: 1em;
+  vertical-align: -0.15em;
+  fill: currentColor;
+  overflow: hidden;
+}
+</style>

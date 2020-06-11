@@ -29,8 +29,9 @@ export const routes = [
   {
     path: '/dashboard',
     component: Layout,
-    icon: 'icon-shouye',
-    prefix: 'iconfont',
+    // icon: 'icon-shouye', // iconfont方式图标
+    // prefix: 'iconfont',
+    icon: 'dashboard',
     meta: {
       title: 'dashboard'
     },
@@ -39,8 +40,9 @@ export const routes = [
         path: 'dashboard',
         name: 'dashboard',
         component: () => import('@/views/dashboard/Dashboard'),
-        icon: 'icon-shouye',
-        prefix: 'iconfont',
+        // icon: 'icon-shouye',
+        // prefix: 'iconfont',
+        icon: 'dashboard',
         meta: {
           title: 'dashboard'
         }

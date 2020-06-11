@@ -9,7 +9,14 @@
           :to="item.path + '/' + item.children[0].path"
           :key="item.children[0].name">
           <el-menu-item :index="item.path + '/' + item.children[0].path">
-            <q-font-icon v-if="item.children[0].icon" :prefix="item.children[0].prefix" :name="item.children[0].icon"></q-font-icon>
+            <!-- <q-font-icon v-if="item.children[0].icon"
+              :prefix="item.children[0].prefix"
+              :name="item.children[0].icon"></q-font-icon> -->
+            <q-svg-icon
+              v-if="item.children[0].icon"
+              :name="'q-' + item.children[0].icon"
+              :size="16"
+              class="icon"></q-svg-icon>
             <span v-if="item.children[0].meta && item.children[0].meta.title" slot="title">
               {{ generateTitle(item.children[0].meta.title) }}
             </span>
@@ -20,7 +27,12 @@
         <el-submenu v-else :index="item.name || item.path"
           :key="item.name">
           <template slot="title">
-            <q-font-icon v-if="item.icon" :prefix="item.prefix" :name="item.icon"></q-font-icon>
+            <!-- <q-font-icon v-if="item.icon" :prefix="item.prefix" :name="item.icon"></q-font-icon> -->
+            <q-svg-icon
+              v-if="item.icon"
+              :name="'q-' + item.icon"
+              :size="16"
+              class="icon"></q-svg-icon>
             <span v-if="item.meta && item.meta.title" slot="title">
               {{ generateTitle(item.meta.title) }}
             </span>
@@ -35,7 +47,15 @@
 
             <router-link v-else
               :to="item.path + '/' + child.path" :key="child.name">
-              <q-font-icon v-if="child.icon" :prefix="child.prefix" :name="child.icon"></q-font-icon>
+              <!-- <q-font-icon
+                v-if="child.icon"
+                :prefix="child.prefix"
+                :name="child.icon"></q-font-icon> -->
+              <q-svg-icon
+                v-if="child.icon"
+                :name="'q-' + child.icon"
+                :size="16"
+                class="icon"></q-svg-icon>
               <span v-if="child.meta && child.meta.title" slot="title">
                 {{ generateTitle(child.meta.title) }}
               </span>
@@ -75,6 +95,9 @@ export default {
   .el-menu-item {
     span {
       margin-left: 5px;
+    }
+    .icon {
+      margin-top: -5px;
     }
   }
 }
