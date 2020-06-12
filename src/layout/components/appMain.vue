@@ -1,5 +1,5 @@
 <template>
-  <div class="app-main">
+  <div class="app-main main-bg">
     <transition name="fade" mode="out-in">
       <keep-alive>
         <router-view></router-view>
@@ -17,6 +17,7 @@ export default {
 </script>
 <style lang="less" scoped>
 .app-main {
+  position: relative;
   padding: 20px;
 }
 </style>

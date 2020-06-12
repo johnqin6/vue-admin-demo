@@ -101,3 +101,31 @@ export function urlParam2Obj (url) {
   }
   return JSON.parse('{"' + decodeURIComponent(search).replace(/"/g, '\\"').replace(/&/g, '","').replace(/=/g, '":"') + '"}')
 }
+
+/**
+ * 随机一个整数
+ * @param {*} min
+ * @param {*} max
+ */
+export function random (min, max) {
+  return Math.floor(Math.random() * max + min)
+}
+
+/**
+ * 对象数组排序
+ * @param {*} arr
+ * @param {*} key 需要排序的属性
+ * @param {*} type ascd: 正序，desc: 倒序
+ */
+export function arrSort (arr, key, type) {
+  const _type = type || 'ascd'
+  const _arr = [...arr]
+  _arr.sort((a, b) => {
+    if (_type === 'ascd') {
+      return a[key] - b[key]
+    } else {
+      return b[key] - a[key]
+    }
+  })
+  return _arr
+}

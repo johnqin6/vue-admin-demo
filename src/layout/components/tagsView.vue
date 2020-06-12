@@ -1,6 +1,6 @@
 <template>
   <div class="tags-view-container">
-    <q-scroll-pane class="tags-view-wrapper" ref="scollPane">
+    <q-scroll-pane class="tags-view-wrapper" ref="scrollPane">
       <!-- contextmenu: 右键菜单事件 -->
       <router-link ref="tag" class="tags-view-item"
         :class="isActive(tag) ? 'active' : ''"

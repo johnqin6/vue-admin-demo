@@ -1,7 +1,7 @@
 import store from '@/store'
 
 const { body } = document
-const WIDTH = 1024
+const WIDTH = 900
 const RATIO = 3
 
 export default {

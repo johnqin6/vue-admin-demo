@@ -48,6 +48,27 @@ export const routes = [
         }
       }
     ]
+  },
+  {
+    path: '/cart',
+    component: Layout,
+    icon: 'cart',
+    meta: {
+      title: 'cart'
+    },
+    children: [
+      {
+        path: 'cartList',
+        name: 'cartList',
+        component: () => import('@/views/cart/CartList'),
+        // icon: 'icon-shouye',
+        // prefix: 'iconfont',
+        icon: 'dashboard',
+        meta: {
+          title: 'cart'
+        }
+      }
+    ]
   }
 ]
 

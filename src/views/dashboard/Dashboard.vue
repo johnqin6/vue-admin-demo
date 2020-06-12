@@ -1,20 +1,33 @@
 <template>
   <!-- 仪表盘 -->
   <div class="dahboard">
+    <q-github-corner></q-github-corner>
     <div class="item">
-      仪表盘
-      <!-- <q-svg-icon name="q-dashboard" class="icon"></q-svg-icon> -->
+      <h4>数据展示</h4>
+      <q-data-display :option="option"></q-data-display>
     </div>
   </div>
 </template>
 <script>
 export default {
-  name: 'dahboard'
+  name: 'dahboard',
+  data () {
+    return {
+      option: {
+        span: 8,
+        color: '#15a0ff',
+        data: [
+          { count: 1000, title: '日活跃数' },
+          { count: 3000, title: '月活跃数' },
+          { count: 20000, title: '年活跃数' }
+        ]
+      }
+    }
+  }
 }
 </script>
 <style lang="less" scoped>
-.icon {
-  font-size: 20px;
-  color: #fff;
+.item {
+  margin-bottom: 16px;
 }
 </style>

@@ -12,7 +12,8 @@ export default {
     Default: '默认'
   },
   route: {
-    dashboard: '首页'
+    dashboard: '首页',
+    cart: '购物车'
   },
   tagsView: {
     close: '关闭',

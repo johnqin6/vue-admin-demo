@@ -12,7 +12,8 @@ export default {
     Default: 'Default'
   },
   route: {
-    dashboard: 'dashboard'
+    dashboard: 'dashboard',
+    cart: 'cart'
   },
   tagsView: {
     close: 'Close',
